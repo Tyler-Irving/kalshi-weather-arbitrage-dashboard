@@ -1,0 +1,96 @@
+# Environment & Secrets
+.env
+.env.local
+.env.production
+.env.*.local
+!.env.example
+*.pem
+*.key
+kalshi_private.pem
+
+# API Credentials
+**/secrets/
+**/.secrets/
+credentials.json
+
+# Trading State & Logs
+*.json
+!package.json
+!package-lock.json
+!tsconfig.json
+!requirements.json
+*.jsonl
+*.log
+*.txt
+*.db
+*.sqlite*
+db.sqlite3
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyc
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+venv/
+ENV/
+env/
+.venv/
+
+# Frontend / Node.js
+node_modules/
+.next/
+out/
+dist/
+.cache/
+.parcel-cache/
+.npm
+.eslintcache
+.stylelintcache
+*.tsbuildinfo
+
+# IDEs & Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+*.sublime-project
+*.sublime-workspace
+
+# OS
+Thumbs.db
+desktop.ini
+.Spotlight-V100
+.Trashes
+
+# Testing
+.coverage
+.pytest_cache/
+htmlcov/
+.tox/
+.hypothesis/
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
+*~.nib

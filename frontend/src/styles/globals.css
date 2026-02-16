@@ -1,0 +1,116 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --color-bg-primary: #09090b;
+    --color-bg-secondary: #18181b;
+    --color-bg-tertiary: #27272a;
+    --color-text-primary: #fafafa;
+    --color-text-secondary: #a1a1aa;
+    --color-text-muted: #71717a;
+    --color-accent-green: #22c55e;
+    --color-accent-red: #ef4444;
+    --color-accent-amber: #f59e0b;
+    --color-accent-blue: #3b82f6;
+    --color-accent-gray: #52525b;
+    --color-border: rgba(63, 63, 70, 0.5);
+  }
+
+  body {
+    background-color: var(--color-bg-primary);
+    color: var(--color-text-primary);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #52525b #18181b;
+  }
+}
+
+/* Custom scrollbar for webkit browsers */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-accent-gray);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-secondary);
+}
+
+/* Utility classes for custom colors */
+.bg-bg-primary { background-color: var(--color-bg-primary); }
+.bg-bg-secondary { background-color: var(--color-bg-secondary); }
+.bg-bg-tertiary { background-color: var(--color-bg-tertiary); }
+.text-text-primary { color: var(--color-text-primary); }
+.text-text-secondary { color: var(--color-text-secondary); }
+.text-text-muted { color: var(--color-text-muted); }
+.text-accent-green { color: var(--color-accent-green); }
+.text-accent-red { color: var(--color-accent-red); }
+.text-accent-amber { color: var(--color-accent-amber); }
+.text-accent-blue { color: var(--color-accent-blue); }
+.border-gray-700 { border-color: var(--color-border); }
+
+/* Frost card base */
+.frost-card {
+  background-color: var(--color-bg-secondary);
+  border-radius: 0.75rem;
+  padding: 1.25rem;
+  box-shadow: 0 0 0 1px var(--color-border);
+}
+
+/* Dashboard card - simplified, always expanded */
+.dashboard-card {
+  overflow: visible;
+  position: relative;
+}
+
+/* Settings drawer slide-in */
+@keyframes slideInRight {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 200ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Toast animations */
+@keyframes slideInFromRight {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideOutToRight {
+  from { transform: translateX(0); opacity: 1; }
+  to { transform: translateX(100%); opacity: 0; }
+}
+
+.toast-enter {
+  animation: slideInFromRight 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.toast-exit {
+  animation: slideOutToRight 200ms ease-in forwards;
+}
+
+/* Toast progress bar */
+@keyframes shrinkWidth {
+  from { width: 100%; }
+  to { width: 0%; }
+}
+
+.toast-progress {
+  animation: shrinkWidth linear forwards;
+}
